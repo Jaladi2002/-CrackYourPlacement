@@ -1,0 +1,19 @@
+Using Flyod Warshall Algorithm
+Using two pointers fast and slow....
+Slow moves one position and fast moves two positions at a time
+
+
+bool hasCycle(ListNode *head) 
+    {
+        ListNode *slow = head;
+        ListNode *fast = head;
+        while(fast!=NULL && fast->next!=NULL)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+            if(slow==fast)
+                return true;
+        }
+        return false;
+        
+    }
